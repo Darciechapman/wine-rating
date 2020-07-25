@@ -1,0 +1,29 @@
+{
+    "name": "wine-rating",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server/server.js",
+    "engines": {
+        "node": "12.16.x"
+    },
+    "scripts": {
+        "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+        "start:prod": "cd server && npm start",
+        "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Darciechapman/wine-rating.git"
+    },
+    "dependencies": {
+        "bootstrap": "^4.5.0",
+        "express": "^4.17.1",
+        "if-env": "^1.0.4",
+        "jquery": "^3.5.1",
+        "mongoose": "^5.9.25"
+    },
+    "devDependencies": {
+        "concurrently": "^5.2.0",
+        "nodemon": "^2.0.4"
+    }
+}
