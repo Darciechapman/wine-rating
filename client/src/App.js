@@ -1,25 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import SearchWines from './pages/SearchWines';
+import SavedWines from './pages/SavedWines';
+import AppNavbar from './components/NavBar';
+
+import * as API from './utils/API';
+
+//import context for global state
+import SavedWineContext from './utils/SavedWineContext';
 
 function App() {
+
+  //create state for our saved books
+  const [savedWineState, setSavedWineState] = useState({
+    wines: [],
+    getSavedWines: () => {
+      API.getSavedWines()
+        .then(({ data }) => setSavedWineState({ ...savedWineState, wines: data }));
+    }
+  });
+
+  //get saved books on load
+  useEffect(() => {
+    savedWineState.getSavedWines();
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <>
+        <AppNavbar />
+          <SavedWineContext.Provider value={savedWineState}>
+            <Switch>
+              <Route exact path='/' component={SearchWines}></Route>
+              <Route exact path='/saved' component={SavedWines}></Route>
+              <Route render={() => <h1  className='display-2'>Wrong page!</h1>}></Route>
+            </Switch>
+          </SavedWineContext.Provider>
+      </>
+    </Router>
   );
 }
 
