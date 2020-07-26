@@ -4,11 +4,11 @@ import { Container, Col, Form, Card, Jumbotron, Button, CardColumns } from 'reac
 //import context for global state
 import SavedWineContext from '../utils/SavedWineContext';
 
-import { saveWine, searchGoogleWines } from '../utils/API';
+import { saveWine } from '../utils/API';
 
 function SearchWines() {
     //create state for holding returned google api data
-    const [searchedWines, setSearchedWines] = useState([]);
+    // const [searchedWines, setSearchedWines] = useState([]);
     //create state for holding our search field data
     const [searchInput, setSearchInput] = useState('');
 
@@ -16,32 +16,32 @@ function SearchWines() {
     const { wines: savedWines, getSavedWines } = useContext(SavedWineContext);
 
     //create method to search for wines and set state on form submit
-    const handleFormSubmit = event => {
-        event.preventDefault();
+    // const handleFormSubmit = event => {
+    //     event.preventDefault();
 
-        if (!searchInput) {
-            return false;
-        }
+    //     if (!searchInput) {
+    //         return false;
+    //     }
 
-        searchGoogleWines(searchInput)
-            .then(({ data }) => {
-                const wineData = data.items.map((wine) => ({
-                    // wineId: wine.id,
-                    // authors: wine.volumeInfo.authors || ['No author to display'],
-                    // title: wine.volumeInfo.title,
-                    // description: wine.volumeInfo.description,
-                    // image: wine.volumeInfo.imageLinks?.thumbnail || '',
-                }));
-                console.log(winekData);
-                return setSearchedWines(wineData);
-            })
-            .then(() => setSearchInput(''))
-            .catch((err) => console.log(err));
-    };
+    //     searchGoogleWines(searchInput)
+    //         .then(({ data }) => {
+    //             const wineData = data.items.map((wine) => ({
+    //                 // wineId: wine.id,
+    //                 // authors: wine.volumeInfo.authors || ['No author to display'],
+    //                 // title: wine.volumeInfo.title,
+    //                 // description: wine.volumeInfo.description,
+    //                 // image: wine.volumeInfo.imageLinks?.thumbnail || '',
+    //             }));
+    //             console.log(wineData);
+    //             return setSearchedWines(wineData);
+    //         })
+    //         .then(() => setSearchInput(''))
+    //         .catch((err) => console.log(err));
+    // };
 
     //create function to handle saving a wine to our database
     const handleSaveWine = (wineId) => {
-        //find the book in `searchedBooks` state by the matching id
+        //find the wine in `searchedWines` state by the matching id
         const wineToSave = searchedWines.find((wine) => wine.wineId === wineId);
 
         //save the wines data to our api
