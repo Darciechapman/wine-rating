@@ -40,8 +40,8 @@ function AppNavbar() {
                 </>) : (<>
                     {/* if window width is 960 or greater, we want nav links side by side */}
                     <div>
-                        <Link  style={{ marginRight: '1rem' }} underline='none' display='inline-block' justifySelf='flex-end' color="inherit" component={domLink} to='/'>Search for Books</Link>
-                        <Link style={{ marginLeft: '1rem' }} display='inline-block' justifySelf='flex-end' color="inherit" component={domLink} to='/saved'>See Saved Books</Link>
+                        <Link  style={{ marginRight: '1rem' }} underline='none' display='inline-block' justifySelf='flex-end' color="inherit" component={domLink} to='/'>Search for Wines</Link>
+                        <Link style={{ marginLeft: '1rem' }} display='inline-block' justifySelf='flex-end' color="inherit" component={domLink} to='/saved'>See Saved Wines</Link>
                     </div>
 
 

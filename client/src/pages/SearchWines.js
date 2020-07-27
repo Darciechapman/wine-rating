@@ -8,7 +8,7 @@ import { saveWine } from '../utils/API';
 
 function SearchWines() {
     //create state for holding returned google api data
-    // const [searchedWines, setSearchedWines] = useState([]);
+    const [searchedWines, setSearchedWines] = useState([]);
     //create state for holding our search field data
     const [searchInput, setSearchInput] = useState('');
 
@@ -24,19 +24,19 @@ function SearchWines() {
     //     }
 
     //     searchGoogleWines(searchInput)
-    //         .then(({ data }) => {
-    //             const wineData = data.items.map((wine) => ({
-    //                 // wineId: wine.id,
-    //                 // authors: wine.volumeInfo.authors || ['No author to display'],
-    //                 // title: wine.volumeInfo.title,
-    //                 // description: wine.volumeInfo.description,
-    //                 // image: wine.volumeInfo.imageLinks?.thumbnail || '',
-    //             }));
-    //             console.log(wineData);
-    //             return setSearchedWines(wineData);
-    //         })
-    //         .then(() => setSearchInput(''))
-    //         .catch((err) => console.log(err));
+    //     //     .then(({ data }) => {
+    //     //         const wineData = data.items.map((wine) => ({
+    //     //             // wineId: wine.id,
+    //     //             // authors: wine.volumeInfo.authors || ['No author to display'],
+    //     //             // title: wine.volumeInfo.title,
+    //     //             // description: wine.volumeInfo.description,
+    //     //             // image: wine.volumeInfo.imageLinks?.thumbnail || '',
+    //     //         }));
+    //     //         console.log(wineData);
+    //     //         return setSearchedWines(wineData);
+    //     //     })
+    //     //     .then(() => setSearchInput(''))
+    //     //     .catch((err) => console.log(err));
     // };
 
     //create function to handle saving a wine to our database
@@ -53,7 +53,7 @@ function SearchWines() {
     return (
         <>
             <Jumbotron fluid bg='dark' className='text-light bg-dark'>
-                <Container>
+                {/* <Container>
                     <h1>Search for Wines</h1>
                     <Form onSubmit={handleFormSubmit}>
                         <Form.Row>
@@ -72,7 +72,7 @@ function SearchWines() {
                             </Col>
                         </Form.Row>
                     </Form>
-                </Container>
+                </Container> */}
             </Jumbotron>
             <Container fluid>
                 <h2>{searchedWines.length ? `Viewing ${searchedWines.length} results:` : 'Search for a wine to begin!'}</h2>
