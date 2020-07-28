@@ -9,3 +9,7 @@ export const saveWine = function (wineData) {
 export const deleteWine = function (wineId) {
         return axios.delete(`/api/wines/${wineId}`);
     }
+
+// export const searchGlobalWine = function(query){
+//     return axios.get('https://www.globalwinescore.com/api/' + 'aac290d66032158b705324f7353ae347849ff944', { params: { q: query } });
+// };
