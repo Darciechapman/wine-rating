@@ -4,6 +4,7 @@ const wineSchema = new Schema({
   title: [
     {
       type: String,
+      required: true,
     },
   ],
   year: {
@@ -18,6 +19,7 @@ const wineSchema = new Schema({
   },
   description: {
     type: String,
+    //required??? : true
   },
   wineId: {
     type: String,

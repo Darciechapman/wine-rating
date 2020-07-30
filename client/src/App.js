@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import SearchWines from './pages/SearchWines';
 import SavedWines from './pages/SavedWines';
+import AddWines from './pages/addWines'
 import AppNavbar from './components/NavBar';
 
 import * as API from './utils/API';
@@ -33,6 +34,7 @@ function App() {
             <Switch>
               <Route exact path='/' component={SearchWines}></Route>
               <Route exact path='/saved' component={SavedWines}></Route>
+              <Route exact path='/add' component={AddWines}></Route>
               <Route render={() => <h1  className='display-2'>Wrong page!</h1>}></Route>
             </Switch>
           </SavedWineContext.Provider>

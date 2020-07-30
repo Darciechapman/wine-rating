@@ -4,7 +4,7 @@ import { Container, Col, Form, Card, Jumbotron, Button, CardColumns } from 'reac
 //import context for global state
 import SavedWineContext from '../utils/SavedWineContext';
 
-import { saveWine, searchGlobalWine } from '../utils/API';
+import { saveWine, searchDataWine } from '../utils/API';
 
 function SearchWines() {
     //create state for holding returned google api data
@@ -23,7 +23,7 @@ function SearchWines() {
             return false;
         }
 
-        searchGlobalWine(searchInput)
+        searchDataWine(searchInput)
             .then(({ data }) => {
                 const wineData = data.items.map((wine) => ({
                     // wineId: wine.id,
@@ -38,6 +38,7 @@ function SearchWines() {
             })
             .then(() => setSearchInput(''))
             .catch((err) => console.log(err));
+        
     };
 
     //create function to handle saving a wine to our database

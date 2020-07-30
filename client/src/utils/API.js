@@ -1,16 +1,20 @@
 import axios from 'axios';
 
 export const getSavedWines = function () {
-        return axios.get('/api/wines');
-    }
+    return axios.get('/api/wines');
+}
 export const saveWine = function (wineData) {
-        return axios.post('/api/wines', wineData)
-    }
+    return axios.post('/api/wines', wineData)
+}
 export const deleteWine = function (wineId) {
-        return axios.delete(`/api/wines/${wineId}`);
-    }
+    return axios.delete(`/api/wines/${wineId}`);
+}
 
-// export const searchGlobalWine = function() {
+export const searchDataWine = function() {
+
+}
+
+// export const searchGoballWine = function() {
 //     return axios({
 //         type: "GET",
 //         url: "https://globalwinescore-global-wine-score-v1.p.rapidapi.com/globalwinescores/latest",
