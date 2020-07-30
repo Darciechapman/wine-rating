@@ -25,16 +25,16 @@ function SearchWines() {
 
         searchGlobalWine(searchInput)
             .then(({ data }) => {
-                // const wineData = data.items.map((wine) => ({
-                //     // wineId: wine.id,
-                //     // authors: wine.volumeInfo.authors || ['No author to display'],
-                //     // title: wine.volumeInfo.title,
-                //     // description: wine.volumeInfo.description,
-                //     // image: wine.volumeInfo.imageLinks?.thumbnail || '',
-                // }));
-                // console.log(wineData);
-                // return setSearchedWines(wineData);
-                console.log(data)
+                const wineData = data.items.map((wine) => ({
+                    // wineId: wine.id,
+                    // authors: wine.volumeInfo.authors || ['No author to display'],
+                    // title: wine.volumeInfo.title,
+                    // description: wine.volumeInfo.description,
+                    // image: wine.volumeInfo.imageLinks?.thumbnail || '',
+                }));
+                console.log(wineData);
+                return setSearchedWines(wineData);
+                // console.log(data)
             })
             .then(() => setSearchInput(''))
             .catch((err) => console.log(err));
