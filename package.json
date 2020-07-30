@@ -20,7 +20,8 @@
         "express": "^4.17.1",
         "if-env": "^1.0.4",
         "jquery": "^3.5.1",
-        "mongoose": "^5.9.25"
+        "mongoose": "^5.9.25",
+        "react-bootstrap-star-rating": "^3.5.5-alpha.0.3"
     },
     "devDependencies": {
         "concurrently": "^5.2.0",
