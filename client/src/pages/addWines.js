@@ -12,22 +12,6 @@ import 'react-rater/lib/react-rater.css'
 //import getSavedWines and deleteWine from API file
 // import * as API from '../utils/API';
 
-// class App extends Component {
-//     render() {
-//         return (
-//             <StarRating
-//                 defaultValue={5}
-//                 min={0}
-//                 max={5}
-//                 step={0.5} />
-//         )
-//     }
-// }
-render() {
-    return (<Rater total={5} rating={2} />)
-}
-
-
 function AddWines() {
 
     //<form onSubmit={handleFormSubmit}>
